@@ -8,7 +8,7 @@ class ProductManager{
     static id = 0
         
     addProducts =({title,description,price,thumbnails,code,stock} ) => {
-           if(!title || !description || !thumbnails || !price || !thumbnails || !code || !stock){
+           if(!title || !description || !thumbnails || !price || !code || !stock){
                 return console.log("Rellenar campos requeridos");
             }
 
