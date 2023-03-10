@@ -67,13 +67,6 @@ const manejoArchivos = async()=>{
     } catch (error) {
         console.log(error);
     }
-
-    try {
-        await fs.promises.appendFile('./productos.json' , '  ' , 'utf-8')
-    } catch (error) {
-        console.log(error);
-    }
-
     try {
         if (fs.existsSync(this.path)) {
             const products = await fs.promises.readFile(this.path,'utf-8')
@@ -85,6 +78,13 @@ const manejoArchivos = async()=>{
     } catch (error) {
         console.log(error);
     }
+
+    try {
+        await fs.promises.appendFile('./productos.json' , '  ' , 'utf-8')
+    } catch (error) {
+        console.log(error);
+    }
+
 
     // try {
     //     await fs.promises.unlink('./productos.json')
