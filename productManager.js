@@ -2,7 +2,7 @@ class ProductManager{
 
     constructor (){
         this.products= []
-        this.path = '/productos.json'
+        this.path = './productos.json'
 
     }   
 
