@@ -1,15 +1,17 @@
 class ProductManager{
-
+    
     constructor (){
+       
         this.products= []
-        this.path = fileanme
-        if (fs.existsSync(fileanme)) {
-            this.products= JSON.parse(fs.readFileSync(fileanme))
-        } else {
-            fs.writeSync(filanme , JSON.stringify([]))
-        }
+    //     this.path = filename;
+    //     if (fs.existsSync(filename)) {
+    //       this.productos = JSON.parse(fs.readFileSync(filename));
+    //     } else {
+    //       fs.writeFileSync(filename, JSON.stringify([]))
+    //     }
 
     }   
+    
 
     static id = 0
         
@@ -34,8 +36,9 @@ class ProductManager{
                 id : ProductManager.id
             }
             this.products.push(product)
+            const fs = require ('fs')
 
-          fs.promises.writeFile('./productos.json' , JSON.stringify(newProduct , null , 2))
+          const archivo = fs.promises.writeFile('./productos.json' , JSON.stringify(newProduct , null , 2))
           .then(()=>console.log("Se escribieron los productos")).catch((err)=>console.log(err))
             
             
@@ -55,12 +58,13 @@ class ProductManager{
          }
 
          deleteProduct = ()=>{
-            if (){
-
+            if (id){
+                this.products.slice()
+                console.log("Se borro el objeto");
             }else{
                     console.log("Error")
             }
-         }
+          }
 
          updateProduct = ()=>{
             if (this.products === id) {
@@ -77,6 +81,7 @@ const newProduct = new ProductManager ()
 newProduct.addProducts ({title:"tomate" , description :"Fruta versatil" , price : "300 el kilo" , thumbnails:"Sin imagen" , code:"t1" , stock:3 })
 newProduct.addProducts ({title:"cebolla" , description :"Verdura verde y versatil" , price : "250 el kilo" , thumbnails:"Sin imagen" , code:"C1" , stock:7 }) 
 newProduct.getProducts()
+newProduct.deleteProduct(1)
 
-const fs = require ('fs')
+
 
